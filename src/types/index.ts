@@ -16,14 +16,17 @@ export enum ElementStates {
   Modified = "modified",
 }
 
+export enum StackAction {
+  Add = "add",
+  Del = "del",
+}
+
 export interface IElement {
   value: string | undefined;
   state: ElementStates;
 }
 
 export interface ICircleElement extends IElement {
-  adding?: boolean;
-  deleting?: boolean;
   arrow?: boolean;
   tail?: string;
   head?: string;

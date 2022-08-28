@@ -25,7 +25,7 @@ export class SortAlgorithm extends AbstractAlgorithm {
 
   resetAnimation = (): void => {
     const size = Math.floor(Math.random() * (SORT_MAX_LEN - SORT_MIN_LEN) + SORT_MIN_LEN)
-    const array = Array.from({length: size}, () => Math.floor(Math.random() * SORT_MAX_VALUE) + SORT_MIN_VALUE)
+    const array = Array.from({length: size}, () => Math.floor(Math.random() * (SORT_MAX_VALUE + 1)) + SORT_MIN_VALUE)
     this.numberArray = [...array.map(ch => ({value: ch.toString(), state: ElementStates.Default}))]
     this.animationFunctions.resultFunc([...this.numberArray])
   }
