@@ -5,6 +5,7 @@
   align-items: center;
   box-sizing: border-box;
   width: fit-content;
+  padding-top: 20px;
 }
 
 .circle {
