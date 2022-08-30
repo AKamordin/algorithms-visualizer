@@ -21,3 +21,6 @@ export const SORT_MIN_VALUE = 0
 export const SORT_MAX_VALUE = 100
 export const STACK_MIN_VALUE_LEN = 1
 export const STACK_MAX_VALUE_LEN = 4
+export const QUEUE_MIN_VALUE_LEN = 1
+export const QUEUE_MAX_VALUE_LEN = 4
+export const QUEUE_MAX_SIZE = 7

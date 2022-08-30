@@ -21,6 +21,11 @@ export enum StackAction {
   Del = "del",
 }
 
+export enum QueueAction {
+  Add = "add",
+  Del = "del",
+}
+
 export interface IElement {
   value: string | undefined;
   state: ElementStates;

@@ -38,9 +38,9 @@ export const StackPage: React.FC = () => {
     }
   }
 
-  const handleClear = async () => {
+  const handleClear = () => {
     if (algorithm) {
-      await algorithm.animateClear()
+      algorithm.animateClear()
     }
   }
 
