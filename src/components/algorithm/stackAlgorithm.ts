@@ -2,7 +2,7 @@ import {AbstractAlgorithm} from "./abstractAlgorithm";
 import {AnimationFunctions, ElementStates, ICircleElement} from "../../types";
 import {DELAY_IN_MS, TOP} from "../../constants";
 import {IStack} from "../../types/stack";
-import {Stack} from "./stack";
+import {Stack} from "../../pages/stack-page/stack";
 
 export class StackAlgorithm extends AbstractAlgorithm {
 

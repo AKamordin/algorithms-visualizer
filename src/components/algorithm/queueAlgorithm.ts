@@ -1,7 +1,7 @@
 import {AbstractAlgorithm} from "./abstractAlgorithm";
 import {AnimationFunctions, ElementStates, ICircleElement} from "../../types";
 import {DELAY_IN_MS, HEAD, QUEUE_MAX_SIZE, TAIL} from "../../constants";
-import {Queue} from "./queue";
+import {Queue} from "../../pages/queue-page/queue";
 
 export class QueueAlgorithm extends AbstractAlgorithm {
 

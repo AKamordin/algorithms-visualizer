@@ -6,7 +6,7 @@ import {
   LIST_INIT_MAX_VALUE,
   LIST_INIT_MIN_VALUE,
 } from "../../constants";
-import {LinkedList} from "./linkedList";
+import {LinkedList} from "../../pages/list-page/linkedList";
 import {ILinkedList} from "../../types/linkedList";
 import {generateRandomArray} from "../../utils";
 
