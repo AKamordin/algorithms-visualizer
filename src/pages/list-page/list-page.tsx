@@ -7,7 +7,7 @@ import {Input} from "../../components/ui/input/input";
 import {ElementStates, ICircleElement, ListAction} from "../../types";
 import {ArrowIcon} from "../../components/ui/icons/arrow-icon";
 import {Circle} from "../../components/ui/circle/circle";
-import {HEAD, LIST_INIT_ARRAY, LIST_MAX_VALUE_LEN, LIST_MIN_VALUE_LEN, SHORT_DELAY_IN_MS, TAIL} from "../../constants";
+import {HEAD, LIST_MAX_VALUE_LEN, LIST_MIN_VALUE_LEN, SHORT_DELAY_IN_MS, TAIL} from "../../constants";
 import {LinkedListAlgorithm} from "../../components/algorithm/linkedListAlgorithm";
 
 export const ListPage: React.FC = () => {
@@ -114,12 +114,7 @@ export const ListPage: React.FC = () => {
   useEffect(() => {
     const alg = new LinkedListAlgorithm({loadingFunc: setLoading, resultFunc: setElements}, SHORT_DELAY_IN_MS)
     setAlgorithm(alg)
-    setAction(ListAction.AddToTail)
-    const init = async () => {
-      await alg.animateInit(LIST_INIT_ARRAY)
-    }
-    init().then(() => console.log('Init List has been built'))
-    setAction(ListAction.AddToTail)
+    alg.init()
   }, [])
 
   return (

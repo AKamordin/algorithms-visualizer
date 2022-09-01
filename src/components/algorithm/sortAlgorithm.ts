@@ -1,6 +1,7 @@
 import {AbstractAlgorithm} from "./abstractAlgorithm";
 import {AnimationFunctions, Direction, ElementStates, IElement, SortMethod} from "../../types";
 import {DELAY_IN_MS, SORT_MAX_LEN, SORT_MAX_VALUE, SORT_MIN_LEN, SORT_MIN_VALUE} from "../../constants";
+import {generateRandomArray} from "../../utils";
 
 export class SortAlgorithm extends AbstractAlgorithm {
 
@@ -25,8 +26,8 @@ export class SortAlgorithm extends AbstractAlgorithm {
 
   resetAnimation = (): void => {
     const size = Math.floor(Math.random() * (SORT_MAX_LEN - SORT_MIN_LEN) + SORT_MIN_LEN)
-    const array = Array.from({length: size}, () => Math.floor(Math.random() * (SORT_MAX_VALUE + 1)) + SORT_MIN_VALUE)
-    this.numberArray = [...array.map(ch => ({value: ch.toString(), state: ElementStates.Default}))]
+    const array = generateRandomArray(size, SORT_MIN_VALUE, SORT_MAX_VALUE)
+    this.numberArray = [...array]
     this.animationFunctions.resultFunc([...this.numberArray])
   }
 

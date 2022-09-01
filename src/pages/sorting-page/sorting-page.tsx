@@ -47,7 +47,9 @@ export const SortingPage: React.FC = () => {
   }
 
   useEffect(() => {
-    setAlgorithm(new SortAlgorithm({loadingFunc: setLoading, resultFunc: setColumns}, SORT_DELAY_IN_MS))
+    const alg = new SortAlgorithm({loadingFunc: setLoading, resultFunc: setColumns}, SORT_DELAY_IN_MS)
+    setAlgorithm(alg)
+    alg.resetAnimation()
   }, [])
 
   return (

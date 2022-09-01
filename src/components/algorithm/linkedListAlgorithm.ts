@@ -1,7 +1,14 @@
 import {AbstractAlgorithm} from "./abstractAlgorithm";
 import {AnimationFunctions, ElementStates, ICircleElement} from "../../types";
-import {DELAY_IN_MS} from "../../constants";
-import {ILinkedList, LinkedList} from "../../types/linkedList";
+import {
+  DELAY_IN_MS,
+  LIST_INIT_ARRAY_SIZE,
+  LIST_INIT_MAX_VALUE,
+  LIST_INIT_MIN_VALUE,
+} from "../../constants";
+import {LinkedList} from "./linkedList";
+import {ILinkedList} from "../../types/linkedList";
+import {generateRandomArray} from "../../utils";
 
 export class LinkedListAlgorithm extends AbstractAlgorithm {
 
@@ -37,16 +44,10 @@ export class LinkedListAlgorithm extends AbstractAlgorithm {
     await this.delay()
   }
 
-  animateInit = async (values: string[]) => {
-    this.setLoading(true)
-    for (const val of values) {
-      const value: ICircleElement = {
-        value: val,
-        state: ElementStates.Default,
-      };
-      await this.addTail(value)
-    }
-    this.setLoading(false)
+  init = () => {
+    const array = generateRandomArray(LIST_INIT_ARRAY_SIZE, LIST_INIT_MIN_VALUE, LIST_INIT_MAX_VALUE)
+    this.list.fromArray(array)
+    this.animationFunctions.resultFunc([...array])
   }
 
   addHead = async (value: ICircleElement) => {

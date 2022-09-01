@@ -19,12 +19,14 @@ export const StringPage: React.FC = () => {
   const reverseString = async () => {
     if (algorithm) {
       await algorithm.animate()
+      setInputValue('')
     }
   }
 
   const handleValueChanged = (event: FormEvent<HTMLInputElement>) => {
-    setInputValue(event.currentTarget.value)
-    if (algorithm) {
+    const value = event.currentTarget.value
+    setInputValue(value)
+    if (algorithm && value) {
       algorithm.resetAnimation(event.currentTarget.value)
     }
   }
