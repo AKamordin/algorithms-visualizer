@@ -87,14 +87,26 @@ export const ListPage: React.FC = () => {
 
   const handleAddByIndex = async () => {
     setAction(ListAction.AddByIndex)
-
+    if (algorithm) {
+      await algorithm.animateAddByIndex(Number(inputIndex), {
+        value: inputValue,
+        state: ElementStates.Modified,
+        extraCircle : {
+          value: inputValue,
+          state: ElementStates.Changing,
+        }
+      })
+    }
+    setInputValue('')
     setInputIndex('')
     setAction(undefined)
   }
 
   const handleDelByIndex = async () => {
     setAction(ListAction.DelByIndex)
-
+    if (algorithm) {
+      await algorithm.animateDelByIndex(Number(inputIndex))
+    }
     setInputIndex('')
     setAction(undefined)
   }
@@ -102,12 +114,12 @@ export const ListPage: React.FC = () => {
   useEffect(() => {
     const alg = new LinkedListAlgorithm({loadingFunc: setLoading, resultFunc: setElements}, SHORT_DELAY_IN_MS)
     setAlgorithm(alg)
-    setAction(ListAction.AddToHead)
+    setAction(ListAction.AddToTail)
     const init = async () => {
       await alg.animateInit(LIST_INIT_ARRAY)
     }
     init().then(() => console.log('Init List has been built'))
-    setAction(ListAction.AddToHead)
+    setAction(ListAction.AddToTail)
   }, [])
 
   return (
@@ -165,7 +177,7 @@ export const ListPage: React.FC = () => {
           />
           <Button
             extraClass={styles.bigButton}
-            disabled={!inputIndex || loading || Number(inputIndex) > elements.length - 1}
+            disabled={!inputValue || !inputIndex || loading || Number(inputIndex) > elements.length - 1}
             isLoader={loading && action === ListAction.AddByIndex}
             text="Добавить по индексу"
             onClick={handleAddByIndex}
