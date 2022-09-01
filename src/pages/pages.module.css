@@ -1,0 +1,83 @@
+.circleList {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  list-style-type: none;
+  margin-top: 100px;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.columnList {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  align-content: flex-start;
+  column-gap: 16px;
+  row-gap: 48px;
+  width: 944px;
+  list-style-type: none;
+  margin: 10px auto 0;
+  padding: 0;
+}
+
+.input {
+  max-width: 377px;
+}
+
+.inputValue {
+  width: 240px;
+}
+
+.inputIndex {
+  width: 240px;
+}
+
+.radioButtons {
+  display: flex;
+  margin-top: 18px;
+  margin-right: 52px;
+  gap: 40px;
+}
+
+
+.buttonsContainer {
+  display: flex;
+  gap: 12px;
+  margin-right: 80px;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.button {
+  min-width: 175px;
+}
+
+.bigButton {
+  min-width: 362px;
+}
+
+.listItemContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.topCircle {
+  position: absolute;
+  top: -61px;
+  left: 15px;
+}
+
+.bottomCircle {
+  position: absolute;
+  top: 120px;
+  left: 12px;
+}
