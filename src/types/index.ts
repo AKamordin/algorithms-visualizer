@@ -26,13 +26,22 @@ export enum QueueAction {
   Del = "del",
 }
 
+export enum ListAction {
+  AddToHead   = "addToHead",
+  AddToTail   = "addToTail",
+  DelFromHead = "delFromHead",
+  DelFromTail = "delFromTail",
+  AddByIndex  = "addByIndex",
+  DelByIndex  = "delByIndex",
+}
+
+
 export interface IElement {
   value: string | undefined;
   state: ElementStates;
 }
 
 export interface ICircleElement extends IElement {
-  arrow?: boolean;
   tail?: string;
   head?: string;
   extraCircle?: IElement;

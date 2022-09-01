@@ -24,3 +24,6 @@ export const STACK_MAX_VALUE_LEN = 4
 export const QUEUE_MIN_VALUE_LEN = 1
 export const QUEUE_MAX_VALUE_LEN = 4
 export const QUEUE_MAX_SIZE = 7
+export const LIST_INIT_ARRAY = ['0', '34', '8', '1']
+export const LIST_MIN_VALUE_LEN = 1
+export const LIST_MAX_VALUE_LEN = 4
