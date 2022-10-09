@@ -66,6 +66,7 @@ export const StackPage: React.FC = () => {
           isLoader={loading && action === StackAction.Add}
           text="Добавить"
           onClick={handlePush}
+          data-cy="addButton"
         />
         <Button
           extraClass={styles.deleteBtn}
@@ -73,11 +74,13 @@ export const StackPage: React.FC = () => {
           disabled={!elements.length || loading}
           onClick={handlePop}
           text="Удалить"
+          data-cy="delButton"
         />
         <Button
           disabled={!elements.length || loading}
           text="Очистить"
           onClick={handleClear}
+          data-cy="clrButton"
         />
       </InputArea>
       <ul className={styles.circleList}>

@@ -130,6 +130,7 @@ export const ListPage: React.FC = () => {
             value={inputValue || ''}
             onChange={handleValueChanged}
             isLimitText={true}
+            data-cy="valueInput"
           />
           <Button
             extraClass={styles.button}
@@ -137,6 +138,7 @@ export const ListPage: React.FC = () => {
             isLoader={loading && action === ListAction.AddToHead}
             text="Добавить в head"
             onClick={handleAddHead}
+            data-cy="addHeadButton"
           />
           <Button
             extraClass={styles.button}
@@ -144,6 +146,7 @@ export const ListPage: React.FC = () => {
             disabled={loading || !inputValue}
             text="Добавить в tail"
             onClick={handleAddTail}
+            data-cy="addTailButton"
           />
           <Button
             extraClass={styles.button}
@@ -151,6 +154,7 @@ export const ListPage: React.FC = () => {
             isLoader={loading && action === ListAction.DelFromHead}
             text="Удалить из head"
             onClick={handleDelHead}
+            data-cy="delHeadButton"
           />
           <Button
             extraClass={styles.button}
@@ -158,6 +162,7 @@ export const ListPage: React.FC = () => {
             isLoader={loading && action === ListAction.DelFromTail}
             text="Удалить из tail"
             onClick={handleDelTail}
+            data-cy="delTailButton"
           />
         </InputArea>
         <InputArea>
@@ -169,6 +174,7 @@ export const ListPage: React.FC = () => {
             maxLength={2}
             value={inputIndex}
             onChange={handleIndexChanged}
+            data-cy="indexInput"
           />
           <Button
             extraClass={styles.bigButton}
@@ -176,6 +182,7 @@ export const ListPage: React.FC = () => {
             isLoader={loading && action === ListAction.AddByIndex}
             text="Добавить по индексу"
             onClick={handleAddByIndex}
+            data-cy="addByIndexButton"
           />
           <Button
             extraClass={styles.bigButton}
@@ -183,6 +190,7 @@ export const ListPage: React.FC = () => {
             disabled={!inputIndex || loading || Number(inputIndex) > elements.length - 1}
             text="Удалить по индексу"
             onClick={handleDelByIndex}
+            data-cy="delByIndexButton"
           />
         </InputArea>
       </div>
