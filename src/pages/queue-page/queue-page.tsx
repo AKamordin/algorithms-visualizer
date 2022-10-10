@@ -69,6 +69,7 @@ export const QueuePage: React.FC = () => {
           isLoader={loading && action === QueueAction.Add}
           text="Добавить"
           onClick={handleEnqueue}
+          data-cy="addButton"
         />
         <Button
           extraClass={styles.deleteBtn}
@@ -76,11 +77,13 @@ export const QueuePage: React.FC = () => {
           disabled={isEmpty || loading}
           onClick={handleDequeue}
           text="Удалить"
+          data-cy="delButton"
         />
         <Button
           disabled={isEmpty || loading}
           text="Очистить"
           onClick={handleClear}
+          data-cy="clrButton"
         />
       </InputArea>
 
